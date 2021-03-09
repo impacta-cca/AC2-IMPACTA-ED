@@ -10,10 +10,8 @@ import org.junit.jupiter.api.Test;
 class ArrayIndexListTest {
 
 	
-	
-	
-	
 	ArrayIndexList<Integer> A = new ArrayIndexList<Integer>();
+	
 	@Test
 	void test() {
 		
