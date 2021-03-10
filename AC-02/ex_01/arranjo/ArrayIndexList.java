@@ -1,6 +1,6 @@
 package arranjo;
 
-import arranjo2.IndexList;
+import arranjo.IndexList;
 
 public class ArrayIndexList<E> implements IndexList<E> {
 	
