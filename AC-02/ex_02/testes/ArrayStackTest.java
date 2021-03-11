@@ -1,22 +1,21 @@
 package testes;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 import pilha.ArrayStack;
 import pilha.EmptyStackException;
 import pilha.FullStackException;
-
 
 class ArrayStackTest {
 
 	static final ArrayStack<String> a = new ArrayStack<String>(3);
 
 	@Test
-	
+
 	void pilhaInteiros() {
 
 		a.push("sete");

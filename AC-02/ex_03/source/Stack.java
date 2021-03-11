@@ -1,17 +1,16 @@
 package source;
 
-
 public interface Stack<E> {
-	
-	// Retorna o número de elementos na pilha.
+
+	// Retorna o nï¿½mero de elementos na pilha.
 
 	public int size();
 
-	// @return True se a pilha é vazia, False em caso contrário.
+	// @return True se a pilha ï¿½ vazia, False em caso contrï¿½rio.
 
 	public boolean isEmpty();
 
-	// @return o elemento que está no topo da pilha.
+	// @return o elemento que estï¿½ no topo da pilha.
 
 	// @exception EmptyStackException se a pilha estiver vazia.
 

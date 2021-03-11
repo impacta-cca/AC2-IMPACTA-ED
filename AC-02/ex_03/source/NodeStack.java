@@ -1,67 +1,70 @@
 package source;
 
 public class NodeStack<E> {
-	
-	protected Node<E> top; // referência para o nodo cabeça
+
+	protected Node<E> top; // referï¿½ncia para o nodo cabeï¿½a
 
 	protected int size; // quantidade de elementos na pilha
 
-	public NodeStack() { // constrói uma pilha vazia
+	public NodeStack() { // constrï¿½i uma pilha vazia
 
-	top = null;
+		top = null;
 
-	size = 0;
+		size = 0;
 
 	}
 
-	public int size() {return size; }
+	public int size() {
+		return size;
+	}
 
 	public boolean isEmpty() {
 
-	if (top == null) return true;
+		if (top == null)
+			return true;
 
-	return false;
+		return false;
 
 	}
 
 	public void push(E elem) {
 
-	Node<E> v = new Node<E>(elem, top); // cria e encadeia um nodo novo
+		Node<E> v = new Node<E>(elem, top); // cria e encadeia um nodo novo
 
-	top = v;
+		top = v;
 
-	size++;
+		size++;
 
 	}
 
 	public E top() throws EmptyStackException {
 
-	if (isEmpty()) throw new EmptyStackException("Stack is empty.");
+		if (isEmpty())
+			throw new EmptyStackException("Stack is empty.");
 
-	return top.getElement();
+		return top.getElement();
 
 	}
 
 	public E pop() throws EmptyStackException {
 
-	Node<E> aux = top;
+		Node<E> aux = top;
 
-	if (isEmpty()) throw new EmptyStackException("Stack is empty.");
+		if (isEmpty())
+			throw new EmptyStackException("Stack is empty.");
 
-	E temp = top.getElement();
+		E temp = top.getElement();
 
-	top = top.getNext(); // desencadeia o nodo topo
+		top = top.getNext(); // desencadeia o nodo topo
 
-	aux.setNext(null);
+		aux.setNext(null);
 
-	size--;
+		size--;
 
-	return temp;
-	
-	
+		return temp;
+
 	}
-	
-	
+
 	public String toString() {
 
 		String s;
@@ -72,21 +75,20 @@ public class NodeStack<E> {
 
 		while (p != null) {
 
-		s += p.getElement();
+			s += p.getElement();
 
-		s += ", ";
+			s += ", ";
 
-		p = p.getNext();
+			p = p.getNext();
 
 		}
 
 		if (s.length() > 1)
 
-		s = s.substring(0, s.length() -
-		2);
+			s = s.substring(0, s.length() - 2);
 
 		return s + "]";
-		
+
 	}
 
 }

@@ -1,37 +1,47 @@
 package source;
 
 public class Node<E> {
-	
-	// Variáveis de instância
+
+	// Variï¿½veis de instï¿½ncia
 
 	private E element;
 
 	private Node<E> next;
 
-	// Cria um nodo com referências nulas para os seus elementos e o próximo nodo
+	// Cria um nodo com referï¿½ncias nulas para os seus elementos e o prï¿½ximo nodo
 
-	public Node() { this(null, null); }
+	public Node() {
+		this(null, null);
+	}
 
-	// Cria um nodo com um dado elemento e o próximo nodo
+	// Cria um nodo com um dado elemento e o prï¿½ximo nodo
 
 	public Node(E e, Node<E> n) {
 
-	element = e;
+		element = e;
 
-	next = n;
+		next = n;
 
 	}
 
-	// Métodos de acesso:
+	// Mï¿½todos de acesso:
 
-	public E getElement() { return element; }
+	public E getElement() {
+		return element;
+	}
 
-	public Node<E> getNext() { return next; }
+	public Node<E> getNext() {
+		return next;
+	}
 
-	// Métodos modificadores:
+	// Mï¿½todos modificadores:
 
-	public void setElement(E newElem) { element = newElem; }
+	public void setElement(E newElem) {
+		element = newElem;
+	}
 
-	public void setNext(Node<E> newNext) { next = newNext; }
+	public void setNext(Node<E> newNext) {
+		next = newNext;
+	}
 
 }

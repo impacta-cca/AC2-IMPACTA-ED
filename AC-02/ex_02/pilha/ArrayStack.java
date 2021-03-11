@@ -8,11 +8,11 @@ public class ArrayStack<E> implements Stack<E> {
 
 	protected E S[]; // Arranjo usado para implementar a pilha
 
-	protected int top = -1; // índice para o topo da pilha
+	protected int top = -1; // ï¿½ndice para o topo da pilha
 
 	public ArrayStack() {
 
-// Se a Pilha for criada sem um quantidade máxima definida,
+// Se a Pilha for criada sem um quantidade mï¿½xima definida,
 
 // faz com que a capacidade seja 1000, default.
 
@@ -25,7 +25,7 @@ public class ArrayStack<E> implements Stack<E> {
 
 		capacity = cap;
 
-// o compilador deve gerar um aviso, mas está ok
+// o compilador deve gerar um aviso, mas estï¿½ ok
 
 		S = (E[]) new Object[capacity];
 
@@ -71,7 +71,7 @@ public class ArrayStack<E> implements Stack<E> {
 
 		element = S[top];
 
-// desreferência S[top] para o sistema de coleta de lixo
+// desreferï¿½ncia S[top] para o sistema de coleta de lixo
 
 		S[top--] = null;
 
@@ -80,24 +80,15 @@ public class ArrayStack<E> implements Stack<E> {
 	}
 
 	public String toString() {
-
 		String s;
-
 		s = "[";
-
 		if (size() > 0)
 			s += S[0];
-
 		if (size() > 1) {
-
 			for (int i = 1; i <= size() - 1; i++) {
-
 				s += ", " + S[i];
-
 			}
-
 		}
-
 		return s + "]";
 
 	}
