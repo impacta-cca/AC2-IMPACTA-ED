@@ -1,3 +1,6 @@
+Link para arquivo com desenhos:
+https://docs.google.com/document/d/1wOfapFNcjUWEcfgqZuP9PwBxIBEr2olp5TgL0ABkqtU/edit?usp=sharing
+
 AC2 - Estrutura de Dados
 Integrantes:
 Arthur Silva
@@ -38,11 +41,11 @@ c. Verifique se parênteses, colchetes e chaves estão corretos numa expressão
 - 12 operações top 
 - 10 operações pop 
 - 3 das quais geraram StackEmptyExceptions, que foram capturadas e ignoradas. 
-Qual é o tamanho correntede S?
-Pilha aṕos 25 oprações de push
+Qual é o tamanho corrente de S?
+Pilha aṕos 25 operações de push
 [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
-Pilha aṕos 25 oprações de pop
+Pilha aṕos 25 operações de pop
 [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 O tamanho da lista é: 15
@@ -63,6 +66,7 @@ O tamanho da lista é: 15
 [5]
 [5, 9]
 [5, 9, 1]
+[5, 9]
 [5, 9, 7]
 [5, 9, 7, 6]
 [5, 9, 7]
@@ -92,7 +96,7 @@ addLast(e)
 12.Implemente um novo método, makeFirst(p), que move o elemento na posição p para a
 primeira posição, mantendo a ordem relativa dos demais elementos inalterada.
 
-A implementação de NodePositionList não faz verificações de erro para testar se uma
+13.A implementação de NodePositionList não faz verificações de erro para testar se uma
 dada posição p é realmente membro dessa lista em particular.
 	a. Por exemplo, se p é uma posição da lista S, a execução T.addAfter(p,e) deveria
 	lançar a exceção InvalidPositionException pois p não é uma posição de T.

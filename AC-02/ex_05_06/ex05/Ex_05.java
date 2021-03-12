@@ -12,7 +12,7 @@ public class Ex_05 {
 			S.push(i);
 		}
 		// Mosta Pilha aṕos 25 push
-		System.out.println("Pilha aṕos 25 oprações de push");
+		System.out.println("Pilha aṕos 25 operações de push");
 		System.out.println(S.toString());
 		System.out.println();
 
@@ -28,7 +28,7 @@ public class Ex_05 {
 			S.pop();
 		}		
 		// Mosta Pilha aṕos 10 pop
-		System.out.println("Pilha aṕos 25 oprações de pop");
+		System.out.println("Pilha aṕos 25 operações de pop");
 		System.out.println(S.toString());
 		System.out.println();
 		
