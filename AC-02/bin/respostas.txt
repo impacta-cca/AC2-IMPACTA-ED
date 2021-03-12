@@ -1,0 +1,39 @@
+AC2 - Estrutura de Dados
+Integrantes:
+Arthur Silva
+Carolina Gabrielle
+Larissa Ionafa
+Lucas Silva
+Roberta Yumi
+
+Respostas:
+
+2. Desenvolva um projeto no GitHub que estenda a classe de testes do TAD Pilha.
+https://github.com/impacta-cca/AC2-IMPACTA-ED/tree/main/AC-02/ex_02
+
+7.Descreva a saída resultante da seguinte série de operações de pilha: 
+[5]
+[5, 3]
+[5]
+[5, 2]
+[5, 2, 8]
+[5, 2]
+[5]
+[5, 9]
+[5, 9, 1]
+[5, 9, 7]
+[5, 9, 7, 6]
+[5, 9, 7]
+[5, 9]
+[5, 9, 4]
+[5, 9]
+[5]
+
+8. Crie os testes e implemente o TAD Fila. Use implementação do TAD Pilha como
+exemplo.
+https://github.com/impacta-cca/AC2-IMPACTA-ED/tree/main/AC-02/ex_08
+
+9. Implemente o TAD Fila com base nos testes e no fragmento de implementação de duas operações apresentadas a seguir (Tarefa 13 - TAD-Fila.pptx, slides 19, 20 e 21).
+ [Fazendo] Yumi.
+
+10. Desenhe figuras demonstrando cada um dos passos principais dos métodos addBefore(p, e), addFirst(e) e addLast(e) do TAD lista de nodos.

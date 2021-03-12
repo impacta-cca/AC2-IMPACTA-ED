@@ -1,4 +1,4 @@
-package source;
+package queue;
 
 public class ArrayQueue<E> implements Queue<E> {
 

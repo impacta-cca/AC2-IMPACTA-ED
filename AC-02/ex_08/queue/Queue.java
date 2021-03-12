@@ -1,27 +1,27 @@
-package source;
+package queue;
 
 public interface Queue<E> {
 
 	/*
-	 * Retorna o número de elementos na fila.
+	 * Retorna o nï¿½mero de elementos na fila.
 	 * 
-	 * @return número de elementos na fila.
+	 * @return nï¿½mero de elementos na fila.
 	 */
 
 	public int size();
 
 	/*
-	 * Retorna se a fila está vazia.
+	 * Retorna se a fila estï¿½ vazia.
 	 * 
-	 * @return true se a fila estiver vazia, false em caso contrário.
+	 * @return true se a fila estiver vazia, false em caso contrï¿½rio.
 	 */
 
 	public boolean isEmpty();
 
 	/*
-	 * Inspeciona o elemento à frente da fila.
+	 * Inspeciona o elemento ï¿½ frente da fila.
 	 * 
-	 * @return o elemento à frente da fila.
+	 * @return o elemento ï¿½ frente da fila.
 	 * 
 	 * @exception EmptyQueueException se a fila estiver vazia.
 	 */
@@ -37,7 +37,7 @@ public interface Queue<E> {
 	public void enqueue(E element) throws FullQueueException;
 
 	/*
-	 * Remove o elemento à frente da fila.
+	 * Remove o elemento ï¿½ frente da fila.
 	 * 
 	 * @return elemento removido.
 	 * 

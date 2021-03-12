@@ -1,12 +1,13 @@
-package tests;
+package test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import source.ArrayQueue;
-import source.EmptyQueueException;
-import source.FullQueueException;
+
+import queue.ArrayQueue;
+import queue.EmptyQueueException;
+import queue.FullQueueException;
 
 class QueueTests {
 
