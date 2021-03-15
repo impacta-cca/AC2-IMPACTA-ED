@@ -40,7 +40,7 @@ public class NodeStack<E> {
 	public E top() throws EmptyStackException {
 
 		if (isEmpty())
-			throw new EmptyStackException("Stack is empty.");
+			throw new EmptyStackException("Stack is empty!");
 
 		return top.getElement();
 
@@ -51,7 +51,7 @@ public class NodeStack<E> {
 		Node<E> aux = top;
 
 		if (isEmpty())
-			throw new EmptyStackException("Stack is empty.");
+			throw new EmptyStackException("Stack is empty!");
 
 		E temp = top.getElement();
 
