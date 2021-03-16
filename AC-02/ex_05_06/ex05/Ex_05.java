@@ -8,23 +8,29 @@ public class Ex_05 {
 		testaPilha();
 	}
 	
-	public static void testaPilha() throws EmptyStackException {
+	public static void testaPilha()  {
 		// Cria lista vazia S
 		final NodeStack<Integer> S = new NodeStack<Integer>();
 	
 		// Cria 3 casos de erro 
+		
+			
 		for (int i = 1; i <= 3; i++) {
 			S.push(i);
-			S.pop();
-			S.top();
+			//Captura os erros e ignora.	
+			try{S.pop();}catch (Exception EmptystackException) {System.out.println("Não foi possivel realizar o pop, pois a lista está vazia");}
+			try{S.top();}catch (Exception EmptystackException) {System.out.println("Não foi possivel realizar o top, pois a lista está vazia");}
 		} 
+			
+		
+
 
 		// 25 operaÃ§Ãµes push
 		for (int i = 1; i <= 22; i++) {
 			S.push(i);
 		}
 		// Mosta Pilha aá¹•os 25 push
-		System.out.println("Pilha aá¹•os 25 operaÃ§Ãµes de push");
+		System.out.println("Pilha aá¹•os 25 operaµes de push");
 		System.out.println(S.toString());
 		System.out.println();
 
