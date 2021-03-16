@@ -1,8 +1,8 @@
-package nodeQueue;
+package nodeQueue13;
 
-import nodeQueue.InvalidPositionException;
-import nodeQueue.Node;
-import nodeQueue.Position;
+import nodeQueue13.InvalidPositionException;
+import nodeQueue13.Node;
+import nodeQueue13.Position;
 
 public class Node<E> implements Position<E> {
 

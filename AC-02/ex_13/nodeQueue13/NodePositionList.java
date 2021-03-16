@@ -1,14 +1,16 @@
-package nodeQueue;
+package nodeQueue13;
 
 import java.util.Iterator;
 
-import nodeQueue.BoundaryViolationException;
-import nodeQueue.ElementIterator;
-import nodeQueue.EmptyListException;
-import nodeQueue.InvalidPositionException;
-import nodeQueue.Node;
-import nodeQueue.Position;
-import nodeQueue.PositionList;
+import nodeQueue13.BoundaryViolationException;
+import nodeQueue13.ElementIterator13;
+import nodeQueue13.EmptyListException;
+import nodeQueue13.InvalidPositionException;
+import nodeQueue13.Node;
+import nodeQueue13.Position;
+import nodeQueue13.PositionList;
+
+
 
 public class NodePositionList<E> implements PositionList<E> {
 
@@ -204,6 +206,8 @@ public class NodePositionList<E> implements PositionList<E> {
 	// Insere um elemento após um dado elemento da lista.
 
 	public void addAfter(Position<E> p, E e) throws InvalidPositionException {
+		
+	if (checkpositionlist(p)==false) {  throw new InvalidPositionException("Nodo não pertence a lista");}
 
 	Node<E> v = checkPosition(p);
 	
@@ -240,6 +244,22 @@ public class NodePositionList<E> implements PositionList<E> {
 		
 	}
 	
+	public boolean checkpositionlist(Position<E> p) {
+		Node<E> recebido = checkPosition(p);
+		Node<E> primeiro = header.getNext();
+		
+		for(int i=0;i<numElts;i++) {
+			
+			if(recebido.element()==primeiro.element()) {
+				if(recebido.getPrev()==primeiro.getPrev() && recebido.getNext() == recebido.getNext()) {
+					return true;
+				}
+			}
+			primeiro = primeiro.getNext();
+		}
+		return false;
+	}
+	
 
 	// Retorna a representação textual de uma lista de nodos
 
@@ -258,7 +278,7 @@ public class NodePositionList<E> implements PositionList<E> {
 
 	// Retorna o iterator a partir do ElemenIterator.
 
-	public Iterator<E> iterator() { return new ElementIterator<E>(this); }
+	public Iterator<E> iterator() { return new ElementIterator13<E>(this); }
 
 	public String toString() { return toString(this); }
 }

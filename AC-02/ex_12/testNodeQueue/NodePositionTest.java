@@ -1,8 +1,11 @@
 package testNodeQueue;
-import nodeQueue.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import nodeQueue.NodePositionList;
+import nodeQueue.Position;
+import nodeQueue13.*;
 
 
 
