@@ -2,17 +2,9 @@ package nodeQueue;
 
 import java.util.Iterator;
 
-import nodeQueue.BoundaryViolationException;
-import nodeQueue.ElementIterator;
-import nodeQueue.EmptyListException;
-import nodeQueue.InvalidPositionException;
-import nodeQueue.Node;
-import nodeQueue.Position;
-import nodeQueue.PositionList;
-
 public class NodePositionList<E> implements PositionList<E> {
 
-	protected int numElts; // Número de elementos na lista
+	protected int numElts; // Nï¿½mero de elementos na lista
 
 	protected Node<E> header, trailer; // Sentinelas especiais
 
@@ -20,155 +12,167 @@ public class NodePositionList<E> implements PositionList<E> {
 
 	public NodePositionList() {
 
-	numElts = 0;
+		numElts = 0;
 
-	header = new Node<E>(null, null, null); // cria a cabeça
+		header = new Node<E>(null, null, null); // cria a cabeï¿½a
 
-	trailer = new Node<E>(header, null, null); // cria a cauda
+		trailer = new Node<E>(header, null, null); // cria a cauda
 
-	header.setNext(trailer); // faz a cabeça e a cauda apontarem uma para a outra
+		header.setNext(trailer); // faz a cabeï¿½a e a cauda apontarem uma para a outra
 
 	}
 
-	// Verifica se a posição é válida para esta lista e a converte para DNode se for válida
+	// Verifica se a posiï¿½ï¿½o ï¿½ vï¿½lida para esta lista e a converte para DNode se for
+	// vï¿½lida
 
 	protected Node<E> checkPosition(Position<E> p) throws InvalidPositionException {
 
-	if (p == null) throw new InvalidPositionException("Null position passed to NodeList");
+		if (p == null)
+			throw new InvalidPositionException("Null position passed to NodeList");
 
-	if (p == header) throw new InvalidPositionException("The header node is not a valid position");
+		if (p == header)
+			throw new InvalidPositionException("The header node is not a valid position");
 
-	if (p == trailer) throw new InvalidPositionException("The trailer node is not a valid position");
+		if (p == trailer)
+			throw new InvalidPositionException("The trailer node is not a valid position");
 
-	try {
+		try {
 
-	Node<E> temp = (Node<E>) p;
+			Node<E> temp = (Node<E>) p;
 
-	if ((temp.getPrev() == null) || (temp.getNext() == null))
+			if ((temp.getPrev() == null) || (temp.getNext() == null))
 
-	throw new InvalidPositionException("Position does not belong to a valid NodeList");
+				throw new InvalidPositionException("Position does not belong to a valid NodeList");
 
-	return temp;
+			return temp;
 
-	} catch (ClassCastException e) {
+		} catch (ClassCastException e) {
 
-	throw new InvalidPositionException("Position is of wrong type for this list");
+			throw new InvalidPositionException("Position is of wrong type for this list");
 
-	}
+		}
 
 	}
 
 	// Retorna a quantidade de elementos na lista
 
-	public int size() {return numElts;}
+	public int size() {
+		return numElts;
+	}
 
 	// Retorna quando a lista esta vazia
 
-	public boolean isEmpty() { return (numElts == 0); }
+	public boolean isEmpty() {
+		return (numElts == 0);
+	}
 
-	// Retorna a primeira posição da lista
+	// Retorna a primeira posiï¿½ï¿½o da lista
 
 	public Position<E> first() throws EmptyListException {
 
-	if (isEmpty()) throw new EmptyListException("List is empty");
+		if (isEmpty())
+			throw new EmptyListException("List is empty");
 
-	return header.getNext();
+		return header.getNext();
 
 	}
 
-	// Retorna a posição que antecede a fornecida
+	// Retorna a posiï¿½ï¿½o que antecede a fornecida
 
 	public Position<E> prev(Position<E> p) throws InvalidPositionException, BoundaryViolationException {
 
-	Node<E> v = checkPosition(p);
+		Node<E> v = checkPosition(p);
 
-	Node<E> prev = v.getPrev();
+		Node<E> prev = v.getPrev();
 
-	if (prev == header) throw new BoundaryViolationException("Cannot advance past the beginning of the list");
+		if (prev == header)
+			throw new BoundaryViolationException("Cannot advance past the beginning of the list");
 
-	return prev;
+		return prev;
 
 	}
 
-	// Insere o elemento antes da posição fornecida, retornando a nova posição
+	// Insere o elemento antes da posiï¿½ï¿½o fornecida, retornando a nova posiï¿½ï¿½o
 
 	public void addBefore(Position<E> p, E element) throws InvalidPositionException {
 
 		Node<E> v = checkPosition(p);
-	
+
 		numElts++;
-	
+
 		Node<E> newNode = new Node<E>(v.getPrev(), v, element);
-	
+
 		v.getPrev().setNext(newNode);
-	
+
 		v.setPrev(newNode);
 
 	}
 
-	// Insere o elemento dado no início da lista, retornando a nova posição
+	// Insere o elemento dado no inï¿½cio da lista, retornando a nova posiï¿½ï¿½o
 
 	public void addFirst(E element) {
 
 		numElts++;
-	
+
 		Node<E> newNode = new Node<E>(header, header.getNext(), element);
-	
+
 		header.getNext().setPrev(newNode);
-	
+
 		header.setNext(newNode);
 
 	}
 
-	// Remove da lista a posição fornecida
+	// Remove da lista a posiï¿½ï¿½o fornecida
 
 	public E remove(Position<E> p) throws InvalidPositionException {
 
 		Node<E> v = checkPosition(p);
-	
+
 		numElts--;
-	
+
 		Node<E> vPrev = v.getPrev();
-	
+
 		Node<E> vNext = v.getNext();
-	
+
 		vPrev.setNext(vNext);
-	
+
 		vNext.setPrev(vPrev);
-	
+
 		E vElem = v.element();
-	
-		// Desconecta a posição da lista e marca-a como inválida
-	
+
+		// Desconecta a posiï¿½ï¿½o da lista e marca-a como invï¿½lida
+
 		v.setNext(null);
-	
+
 		v.setPrev(null);
-	
+
 		return vElem;
 
 	}
 
-	// Substitui o elemento da posição fornecida por um novo e retorna o elemento velho
+	// Substitui o elemento da posiï¿½ï¿½o fornecida por um novo e retorna o elemento
+	// velho
 
 	public E set(Position<E> p, E element) throws InvalidPositionException {
 
 		Node<E> v = checkPosition(p);
-	
+
 		E oldElt = v.element();
-	
+
 		v.setElement(element);
-	
+
 		return oldElt;
 
 	}
 
-	// Retorna o último nodo da lista.
+	// Retorna o ï¿½ltimo nodo da lista.
 
 	public Position<E> last() {
 
-		if (isEmpty()) throw new EmptyListException("List is empty");
-	
-			return  trailer.getPrev();
+		if (isEmpty())
+			throw new EmptyListException("List is empty");
+
+		return trailer.getPrev();
 
 	}
 
@@ -176,89 +180,85 @@ public class NodePositionList<E> implements PositionList<E> {
 
 	public Position<E> next(Position<E> p) throws InvalidPositionException, BoundaryViolationException {
 
-	Node<E> v = checkPosition(p);
-	
+		Node<E> v = checkPosition(p);
 
-	Node<E> next = v.getNext();
+		Node<E> next = v.getNext();
 
-	if (next == trailer) throw new BoundaryViolationException("Cannot advance past the finaling of the list");
+		if (next == trailer)
+			throw new BoundaryViolationException("Cannot advance past the finaling of the list");
 
-	return next;
+		return next;
 
 	}
 
-	// Insere um elemento na última posição, retornando uma posição nova.
+	// Insere um elemento na ï¿½ltima posiï¿½ï¿½o, retornando uma posiï¿½ï¿½o nova.
 
 	public void addLast(E e) {
 
-	numElts++;
+		numElts++;
 
-	Node<E> newNode = new Node<E>(trailer.getPrev(), trailer, e);
+		Node<E> newNode = new Node<E>(trailer.getPrev(), trailer, e);
 
-	trailer.getPrev().setNext(newNode);
+		trailer.getPrev().setNext(newNode);
 
-	trailer.setPrev(newNode);
+		trailer.setPrev(newNode);
 
 	}
 
-	// Insere um elemento após um dado elemento da lista.
+	// Insere um elemento apï¿½s um dado elemento da lista.
 
 	public void addAfter(Position<E> p, E e) throws InvalidPositionException {
 
-	Node<E> v = checkPosition(p);
-	
+		Node<E> v = checkPosition(p);
 
-	numElts++;
+		numElts++;
 
-	Node<E> newNode = new Node<E>(v, v.getNext(), e);
+		Node<E> newNode = new Node<E>(v, v.getNext(), e);
 
-	v.getNext().setPrev(newNode);
+		v.getNext().setPrev(newNode);
 
-	v.setNext(newNode);
+		v.setNext(newNode);
 
 	}
-	
-	
-	
-	
-	
-	
-	
+
 	public void MakeFirst(Position<E> mudar) {
 		Node p = header.getNext();
 		Node temp = this.checkPosition(mudar);
-		
+
 		Node mprev = temp.getPrev();
 		Node mnext = temp.getNext();
 		mprev.setNext(mnext);
 		mnext.setPrev(mprev);
-		
+
 		temp.setNext(header.getNext());
 		temp.setPrev(header);
 		header.setNext(temp);
-		
-		
-	}
-	
 
-	// Retorna a representação textual de uma lista de nodos
+	}
+
+	// Retorna a representaï¿½ï¿½o textual de uma lista de nodos
 
 	public static <E> String toString(PositionList<E> l) {
 
-	String s = "";
+		String s = "";
 
-	for (E i: l) { s += ", " + i; }
+		for (E i : l) {
+			s += ", " + i;
+		}
 
-	s = (s.length() == 0 ? s : s.substring(2));
+		s = (s.length() == 0 ? s : s.substring(2));
 
-	return "[" + s + "]";
+		return "[" + s + "]";
 
 	}
-	
 
 	// Retorna o iterator a partir do ElemenIterator.
 
-	public Iterator<E> iterator() { return new ElementIterator<E>(this); }
+	public Iterator<E> iterator() {
+		return new ElementIterator<E>(this);
+	}
 
-	public String toString() { return toString(this); }
+	public String toString() {
+		return toString(this);
+	}
 }

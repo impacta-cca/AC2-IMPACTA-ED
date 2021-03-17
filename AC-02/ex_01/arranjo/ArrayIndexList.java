@@ -1,7 +1,5 @@
 package arranjo;
 
-import arranjo.IndexList;
-
 public class ArrayIndexList<E> implements IndexList<E> {
 	private E[] A; // arranjo que armazena os elementos da lista
 	private int capacity = 16; // tamanho inicial do arranjo A

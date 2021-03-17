@@ -9,31 +9,31 @@ import listaSimplesmenteEncadeada.EmptyListException;
 import listaSimplesmenteEncadeada.SLinkedList;
 
 class InverteNodosTest {
-	
+
 	SLinkedList lista = new SLinkedList();
 
 	@Test
 	void test() {
-		
+
 		assertThrows(EmptyListException.class, () -> {
 			lista.inverter();
 		});
-		
+
 		assertThrows(EmptyListException.class, () -> {
 			lista.toString();
 		});
-		
+
 		lista.addNodo("um");
 		lista.addNodo("dois");
-		lista.addNodo("três");
+		lista.addNodo("trï¿½s");
 		lista.addNodo("quatro");
 
-		assertEquals("[um, dois, três, quatro]", lista.toString(), "Deve resultar [um, dois, três, quatro]");
-		
+		assertEquals("[um, dois, trï¿½s, quatro]", lista.toString(), "Deve resultar [um, dois, trï¿½s, quatro]");
+
 		lista.inverter();
-		
-		assertEquals("[quatro, três, dois, um]", lista.toString(), "Deve resultar [quatro, três, dois, um]");
-		
+
+		assertEquals("[quatro, trï¿½s, dois, um]", lista.toString(), "Deve resultar [quatro, trï¿½s, dois, um]");
+
 	}
 
 }

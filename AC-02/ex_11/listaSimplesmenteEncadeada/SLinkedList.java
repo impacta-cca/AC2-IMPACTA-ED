@@ -1,14 +1,12 @@
 package listaSimplesmenteEncadeada;
 
-import pilha.EmptyStackException;
-
 //Lista simplesmente encadeada
 
 public class SLinkedList {
 
-	protected Node head; // nodo cabeça da lista
-	protected Node tail; // nodo cabeça da lista
-	protected long size; // número de nodos da lista
+	protected Node head; // nodo cabeï¿½a da lista
+	protected Node tail; // nodo cabeï¿½a da lista
+	protected long size; // nï¿½mero de nodos da lista
 	Node n = null;
 
 	// Construtor default que cria uma lista vazia
@@ -36,37 +34,31 @@ public class SLinkedList {
 	}
 
 	// --------------------------------------
-	
+
 	public String toString() throws EmptyListException {
-		
-		
 		String s;
 
 		Node current = head;
 		s = "[";
-
-		if (head == null) 
+		if (head == null)
 			throw new EmptyListException("List is empty.");
-		
 		s += current.getElement();
 		current = current.getNext();
-		
+
 		for (int i = 0; i <= size - 2; i++) {
 			s += ", " + current.getElement();
 			current = current.getNext();
-		
 		}
-		
 		return s + "]";
 	}
-	
+
 // --------------------------------------------
 
 	public void inverter() throws EmptyListException {
-		
-		if (head == null) 
+
+		if (head == null)
 			throw new EmptyListException("List is empty.");
-		
+
 		Node prev = null;
 		Node next = null;
 		Node current = head;

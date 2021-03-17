@@ -42,11 +42,23 @@ c. Verifique se parênteses, colchetes e chaves estão corretos numa expressão
 - 10 operações pop 
 - 3 das quais geraram StackEmptyExceptions, que foram capturadas e ignoradas. 
 Qual é o tamanho corrente de S?
-Pilha aṕos 25 operações de push
+Nao foi possivel realizar o top, pois a lista esta vazia
+Nao foi possivel realizar o top, pois a lista esta vazia
+Nao foi possivel realizar o top, pois a lista esta vazia
+Pilha aṕos 22 operacoes de push
+[22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+Pilha aṕos 7 operações de pop
+[15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+O tamanho da lista é: 15
+//---------------------------OK
 
 
 6.Se implementarmos a pilha S do problema anterior usando um arranjo, então qual
 será o valor corrente da variável de instância top?
+O valor de corrente de top é: 15
+//---------------------------OK
 
 
 7.Descreva a saída resultante da seguinte série de operações de pilha: 

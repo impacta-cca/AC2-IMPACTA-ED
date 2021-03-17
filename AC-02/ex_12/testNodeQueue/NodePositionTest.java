@@ -1,26 +1,18 @@
 package testNodeQueue;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
 import nodeQueue.NodePositionList;
 import nodeQueue.Position;
-import nodeQueue13.*;
-
-
-
-
 
 class NodePositionTest {
 
 	@Test
 	void test() {
 		NodePositionList<Integer> l = new NodePositionList<Integer>();
-		
-		
-		
-		
-		
+
 		assertEquals("[]", l.toString(), "[]");
 
 		l.addFirst(8);
@@ -74,16 +66,11 @@ class NodePositionTest {
 		l.addAfter(l.first(), 2);
 
 		assertEquals("[8, 2, 7, 5]", l.toString(), "[8, 2, 7, 5]");
-		
-		
-		
+
 		Position<Integer> p = l.prev(l.last());
 		l.MakeFirst(p);
-		
-		assertEquals(7,l.first().element());
-		}
-	
-	
-	
+
+		assertEquals(7, l.first().element());
+	}
 
 }

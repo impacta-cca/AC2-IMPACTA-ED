@@ -3,7 +3,7 @@ package nodeQueue;
 import java.util.Iterator;
 
 public class ElementIterator<E> implements Iterator<E> {
-	
+
 	protected PositionList<E> list;
 
 	protected Position<E> cursor;
@@ -12,37 +12,40 @@ public class ElementIterator<E> implements Iterator<E> {
 
 	public ElementIterator(PositionList<E> L) {
 
-	list = L;
+		list = L;
 
-	cursor = (list.isEmpty()) ? null : list.first();
+		cursor = (list.isEmpty()) ? null : list.first();
 
 	}
 
-	// Retorna se o iterator tem ou não um próximo objeto.
+	// Retorna se o iterator tem ou nï¿½o um prï¿½ximo objeto.
 
-	public boolean hasNext() { return (cursor != null); }
+	public boolean hasNext() {
+		return (cursor != null);
+	}
 
-	// Retorna o próximo objeto do iterator.
+	// Retorna o prï¿½ximo objeto do iterator.
 
 	public E next() throws NoSuchElementException {
 
-	if (cursor == null) throw new NoSuchElementException("No next element");
+		if (cursor == null)
+			throw new NoSuchElementException("No next element");
 
-	E toReturn = cursor.element();
+		E toReturn = cursor.element();
 
-	cursor = (cursor == list.last()) ? null : list.next(cursor);
+		cursor = (cursor == list.last()) ? null : list.next(cursor);
 
-	return toReturn;
+		return toReturn;
 
 	}
 
 	// Dispara um {@link UnsupportedOperationException} para todos os casos, porque
 
-	// a remoção não é uma operação suportada por este iterator.
+	// a remoï¿½ï¿½o nï¿½o ï¿½ uma operaï¿½ï¿½o suportada por este iterator.
 
 	public void remove() throws UnsupportedOperationException {
 
-	throw new UnsupportedOperationException("remove");
+		throw new UnsupportedOperationException("remove");
 
 	}
 

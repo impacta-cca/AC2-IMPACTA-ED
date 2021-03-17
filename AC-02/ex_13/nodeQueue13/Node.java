@@ -1,51 +1,56 @@
 package nodeQueue13;
 
-import nodeQueue13.InvalidPositionException;
-import nodeQueue13.Node;
-import nodeQueue13.Position;
-
 public class Node<E> implements Position<E> {
 
-	
-	private Node<E> prev, next; // Referência para os nodos anterior e posterior
+	private Node<E> prev, next; // Referï¿½ncia para os nodos anterior e posterior
 
-	private E element; // Elemento armazenado nesta posição
+	private E element; // Elemento armazenado nesta posiï¿½ï¿½o
 
 	// Construtor
 
 	public Node(Node<E> newPrev, Node<E> newNext, E elem) {
 
-	prev = newPrev;
+		prev = newPrev;
 
-	next = newNext;
+		next = newNext;
 
-	element = elem;
+		element = elem;
 
 	}
 
-	// Método da interface Position
+	// Mï¿½todo da interface Position
 
 	public E element() throws InvalidPositionException {
 
-	if ((prev == null) && (next == null))
+		if ((prev == null) && (next == null))
 
-	throw new InvalidPositionException("Position is not in a list!");
+			throw new InvalidPositionException("Position is not in a list!");
 
-	return element;
+		return element;
 
 	}
 
-	// Métodos de acesso
+	// Mï¿½todos de acesso
 
-	public Node<E> getNext() { return next; }
+	public Node<E> getNext() {
+		return next;
+	}
 
-	public Node<E> getPrev() { return prev; }
+	public Node<E> getPrev() {
+		return prev;
+	}
 
-	// Métodos de atualização
+	// Mï¿½todos de atualizaï¿½ï¿½o
 
-	public void setNext(Node<E> newNext) { next = newNext; }
+	public void setNext(Node<E> newNext) {
+		next = newNext;
+	}
 
-	public void setPrev(Node<E> newPrev) { prev = newPrev; }
+	public void setPrev(Node<E> newPrev) {
+		prev = newPrev;
+	}
 
-	public void setElement(E newElement) { element = newElement; }
+	public void setElement(E newElement) {
+		element = newElement;
+	}
 }

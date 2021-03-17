@@ -1,7 +1,6 @@
 package nodeQueue;
 
 public interface Position<E> {
-	// Retorna o elemento armazenado nesta 	posição.
-
+	// Retorna o elemento armazenado nesta posiï¿½ï¿½o.
 	E element();
 }

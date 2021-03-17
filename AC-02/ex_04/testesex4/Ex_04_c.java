@@ -1,12 +1,14 @@
 package testesex4;
 
-import static org.junit.jupiter.api.Assertions.*;
-import metodo_ex4b.B04c;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class Ex_04_c {
+import metodo_ex4b.B04c;
 
+class Ex_04_c {
+	// Cria pilha para acumular caracteres e remover conforme encontrar seu
+	// fechamento
 	B04c metodo = new B04c();
 
 	@Test
@@ -21,5 +23,4 @@ class Ex_04_c {
 		assertEquals(false, metodo.verificaABerto("}}}]]"));
 		assertEquals(false, metodo.verificaABerto("}}}]][[{{{"));
 	}
-
 }

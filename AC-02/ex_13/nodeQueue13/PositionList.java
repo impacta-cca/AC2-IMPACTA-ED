@@ -1,17 +1,14 @@
 package nodeQueue13;
-import java.util.Iterator;
 
-import nodeQueue13.BoundaryViolationException;
-import nodeQueue13.InvalidPositionException;
-import nodeQueue13.Position;
+import java.util.Iterator;
 
 public interface PositionList<E> extends Iterable<E> {
 
-	// Retorna o número de elementos desta lista.
+	// Retorna o nï¿½mero de elementos desta lista.
 
 	public int size();
 
-	// Retorna quando a lista está vazia.
+	// Retorna quando a lista estï¿½ vazia.
 
 	public boolean isEmpty();
 
@@ -19,7 +16,7 @@ public interface PositionList<E> extends Iterable<E> {
 
 	public Position<E> first();
 
-	// Retorna o último nodo da lista.
+	// Retorna o ï¿½ltimo nodo da lista.
 
 	public Position<E> last();
 
@@ -31,15 +28,15 @@ public interface PositionList<E> extends Iterable<E> {
 
 	public Position<E> prev(Position<E> p) throws InvalidPositionException, BoundaryViolationException;
 
-	// Insere um elemento no início da lista, retornando uma posição nova.
+	// Insere um elemento no inï¿½cio da lista, retornando uma posiï¿½ï¿½o nova.
 
 	public void addFirst(E e);
 
-	// Insere um elemento na última posição, retornando uma posição nova.
+	// Insere um elemento na ï¿½ltima posiï¿½ï¿½o, retornando uma posiï¿½ï¿½o nova.
 
 	public void addLast(E e);
 
-	// Insere um elemento após um dado elemento da lista.
+	// Insere um elemento apï¿½s um dado elemento da lista.
 
 	public void addAfter(Position<E> p, E e) throws InvalidPositionException;
 
@@ -47,11 +44,12 @@ public interface PositionList<E> extends Iterable<E> {
 
 	public void addBefore(Position<E> p, E e) throws InvalidPositionException;
 
-	// Remove um nodo da lista, retornando o elemento lá armazenado.
+	// Remove um nodo da lista, retornando o elemento lï¿½ armazenado.
 
 	public E remove(Position<E> p) throws InvalidPositionException;
 
-	// Substitui o elemento armazenado em um determinado nodo, retornando o elemento que estava lá armazenado.
+	// Substitui o elemento armazenado em um determinado nodo, retornando o elemento
+	// que estava lï¿½ armazenado.
 
 	public E set(Position<E> p, E e) throws InvalidPositionException;
 
@@ -59,4 +57,4 @@ public interface PositionList<E> extends Iterable<E> {
 
 	public Iterator<E> iterator();
 
-	}
+}

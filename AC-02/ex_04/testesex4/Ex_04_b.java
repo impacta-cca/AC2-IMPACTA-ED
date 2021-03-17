@@ -13,9 +13,11 @@ class Ex_04_b {
 
 	@Test
 	void invertearranjoPilhaLSE() {
+		// Cria e preenche arranjo
 		for (int i = 0; i < 4; i++) {
 			arranjo.add(i, i + 1);
 		}
+		// Usa invertearranjo para inverter e realiza teste
 		assertEquals("(4, 3, 2, 1)", B04.invertearranjo(arranjo).toString());
 	}
 
