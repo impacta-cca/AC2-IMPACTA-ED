@@ -9,7 +9,7 @@ import nodeQueue13.NodePositionList;
 import nodeQueue13.Position;
 
 class NodePositionTest {
-
+	//Teste do Exercicio 13
 	@Test
 	void test() {
 
@@ -31,7 +31,13 @@ class NodePositionTest {
 		l1.addAfter(p3, 2);
 		Position<Integer> p4 = l1.next(p3);
 		l1.addAfter(p4, 8);
-
+		System.out.println(l1.toString());
+		System.out.println(l.checkpositionlist(p4));
+		
+		l1.addAfter(p4, 666);
+		System.out.println(l1.toString());
+		
+		
 		// verifica se a posi��o p4 (que pertence a l1) faz parte a lista l e � esperado
 		// o
 		// o retorno do erro InvalidPositionException

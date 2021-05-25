@@ -101,6 +101,7 @@ public class NodePositionList<E> implements PositionList<E> {
 		numElts++;
 
 		Node<E> newNode = new Node<E>(v.getPrev(), v, element);
+		newNode.setHashlistaoriginal(this.hashCode());
 
 		v.getPrev().setNext(newNode);
 
@@ -115,6 +116,7 @@ public class NodePositionList<E> implements PositionList<E> {
 		numElts++;
 
 		Node<E> newNode = new Node<E>(header, header.getNext(), element);
+		newNode.setHashlistaoriginal(this.hashCode());
 
 		header.getNext().setPrev(newNode);
 
@@ -198,6 +200,7 @@ public class NodePositionList<E> implements PositionList<E> {
 		numElts++;
 
 		Node<E> newNode = new Node<E>(trailer.getPrev(), trailer, e);
+		newNode.setHashlistaoriginal(this.hashCode());
 
 		trailer.getPrev().setNext(newNode);
 
@@ -216,8 +219,9 @@ public class NodePositionList<E> implements PositionList<E> {
 		Node<E> v = checkPosition(p);
 
 		numElts++;
-
+		
 		Node<E> newNode = new Node<E>(v, v.getNext(), e);
+		newNode.setHashlistaoriginal(this.hashCode());
 
 		v.getNext().setPrev(newNode);
 
@@ -239,20 +243,17 @@ public class NodePositionList<E> implements PositionList<E> {
 		header.setNext(temp);
 
 	}
+	
+	//add no Nodo um atributo do tipo inteiro HashCodeOriginal e compara se o hashcodeoriginal do nodo é igual ao da lista que chamou
+	// e retornará false caso não seja igual e verdadeiro caso seja igual.
 
 	public boolean checkpositionlist(Position<E> p) {
 		Node<E> recebido = checkPosition(p);
-		Node<E> primeiro = header.getNext();
+		
 
-		for (int i = 0; i < numElts; i++) {
-
-			if (recebido.element() == primeiro.element()) {
-				if (recebido.getPrev() == primeiro.getPrev() && recebido.getNext() == recebido.getNext()) {
-					return true;
-				}
+		if (recebido.getHashlistaoriginal() == this.hashCode()) {
+				return true;
 			}
-			primeiro = primeiro.getNext();
-		}
 		return false;
 	}
 

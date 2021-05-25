@@ -5,8 +5,12 @@ public class Node<E> implements Position<E> {
 	private Node<E> prev, next; // Refer�ncia para os nodos anterior e posterior
 
 	private E element; // Elemento armazenado nesta posi��o
+	
+	private int hashlistaoriginal;
 
 	// Construtor
+
+	
 
 	public Node(Node<E> newPrev, Node<E> newNext, E elem) {
 
@@ -28,6 +32,15 @@ public class Node<E> implements Position<E> {
 
 		return element;
 
+	}
+	
+	
+	public int getHashlistaoriginal() {
+		return hashlistaoriginal;
+	}
+
+	public void setHashlistaoriginal(int hashlistaoriginal) {
+		this.hashlistaoriginal = hashlistaoriginal;
 	}
 
 	// M�todos de acesso
